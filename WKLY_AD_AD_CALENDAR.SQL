@@ -31,3 +31,8 @@ AND COALESCE(CAL_2.acct_wk_i, CAL_1.acct_wk_i) <> 53
 -- ORDER BY CAL_1.ACCT_WK_END_D
 ) AS CAL
 ORDER BY  STR.co_loc_i, CAL.acct_yr_i, CAL.ts_acct_wk_i
+;
+
+ALTER TABLE prod.ad_ad_calendar_wkly
+ADD CONSTRAINT ad_ad_calendar_wkly_prod_keys PRIMARY KEY (co_loc_i, co_loc_ref_i,acct_wk_end_d, ts_acct_wk_end_d, acct_wk_i, ts_acct_wk_i)
+;
